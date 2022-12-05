@@ -38,7 +38,9 @@ console.log('userAge ' + userAge);
 const ticketPrizePerKm = 0.21;
 console.log('ticketPrizePerKm €' + ticketPrizePerKm);
 
-
+// STABILIRE QUANTO COSTA ALL'UTENTE IL SUO BIGLIETTO IN BASE AI KM INSERITI.
+const userTicketPrize = userKm * ticketPrizePerKm ;
+console.log('userTicketPrize €' + userTicketPrize);
 
 
 
