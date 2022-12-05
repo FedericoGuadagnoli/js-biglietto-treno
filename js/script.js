@@ -1,7 +1,7 @@
 console.log('JS OK');
 
-// | Il programma dovrà chiedere all'utente il numero di chilometri che vuole percorrere e l'età del passeggero.
-// |  Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio, secondo queste regole:
+//  Il programma dovrà chiedere all'utente il numero di chilometri che vuole percorrere e l'età del passeggero.
+//  Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio, secondo queste regole:
 
     /*
        // il prezzo del biglietto è definito in base ai km (0.21 € al km)
@@ -10,7 +10,7 @@ console.log('JS OK');
        // L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). Questo richiederà un minimo di ricerca.
     */
 
-// STEPS \\
+//  STEPS
     /*
     1 - PRENDO L'ELEMENTO DALLA PAGINA.
     2 - CHIEDERE ALL'UTENTE IL NUMERO DI KM CHE VUOLE PERCORRERE.
@@ -22,5 +22,15 @@ console.log('JS OK');
     */
 
     
+// PRENDO L'ELEMENTO DALLA PAGINA.
+const targetElement = document.getElementById('target');
+console.log('target');
 
+// CHIEDERE ALL'UTENTE IL NUMERO DI KM CHE VUOLE PERCORRERE.
+const userKm = prompt('Quanti km vuoi percorrere?', '10');
+console.log('userKm');
+
+// CHIEDERE ALL'UTENTE LA SUA ETA'.
+const userAge = prompt('Quanti anni hai?', '18');
+console.log('userAge');
 
