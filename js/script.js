@@ -43,16 +43,26 @@ const userTicketPrize = userKm * ticketPrizePerKm ;
 console.log('userTicketPrize €' + userTicketPrize);
 
 
+// CREO VARIABILI SCONTI
+const discountUnder18 = 20;
+const discountOver65 = 40;
 
+// COSTO BILGIETTO UNDER18
+const userTicketPrizeUnder18 = userTicketPrize - (userTicketPrize * discountUnder18 / 100);
+console.log('Il tuo sconto under 18 sarà di €' + userTicketPrizeUnder18);
 
+// COSTO BILGIETTO OVER65
+const userTicketPrizeOver65 = userTicketPrize - (userTicketPrize * discountOver65 / 100);
+console.log('Il tuo sconto over 65 sarà di €' + userTicketPrizeOver65);
 
-
-
-
-
-
-// //STAMPARE SU PAGINA IL COSTO DEL
-// targetElement.innerText = `Il costo del tuo biglietto è di € ${userTicketPrize}`;
+// STABILISCO QUALE SCONTO APPLICARE IN BASE ALL'ETA' DATA DALL'UTENTE
+if(userAge >= 18 && userAge <= 65) {
+    targetElement.innerText = `Il costo del tuo biglietto sarà di € ${userTicketPrize}`;
+}   else if (userAge < 18) {
+        targetElement.innerText = `Il costo del tuo biglietto under18 è di € ${userTicketPrizeUnder18}`;
+    } else if (userAge > 65) {
+        targetElement.innerText = `Il costo del tuo biglietto over65 è di € ${userTicketPrizeOver65}`;
+    }
 
 
 
