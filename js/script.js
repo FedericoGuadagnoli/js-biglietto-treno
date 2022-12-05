@@ -57,12 +57,21 @@ console.log('Il tuo sconto over 65 sarà di €' + userTicketPrizeOver65);
 
 // STABILISCO QUALE SCONTO APPLICARE IN BASE ALL'ETA' DATA DALL'UTENTE
 if(userAge >= 18 && userAge <= 65) {
-    targetElement.innerText = `Il costo del tuo biglietto sarà di € ${userTicketPrize}`;
+    targetElement.innerText = `Il costo del tuo biglietto sarà di € ${userTicketPrize.toFixed(2)}`;
 }   else if (userAge < 18) {
-        targetElement.innerText = `Il costo del tuo biglietto under18 è di € ${userTicketPrizeUnder18}`;
+        targetElement.innerText = `Il costo del tuo biglietto under 18 è di € ${userTicketPrizeUnder18.toFixed(2)}`;
     } else if (userAge > 65) {
-        targetElement.innerText = `Il costo del tuo biglietto over65 è di € ${userTicketPrizeOver65}`;
+        targetElement.innerText = `Il costo del tuo biglietto over 65 è di € ${userTicketPrizeOver65.toFixed(2)}`;
     }
 
 
+// RIDUCO I PREZZI A DUE CIFRE DECIMALI 
 
+//CONTROLLO SE LA PAROLA INSERITA NON SIA UN NUMERO
+if(isNaN(userKm) || userKm == '' || userKm ===null) {
+    alert("Per favore inserisci un numero valido nel campo ' Quanti km vuoi percorrere? '.");
+}
+
+if(isNaN(userAge) || userKm == '' || userKm ===null) {
+    alert("Per favore inserisci un numero valido nel campo ' Quanti anni hai? '.");
+}
