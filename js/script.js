@@ -27,10 +27,30 @@ const targetElement = document.getElementById('target');
 console.log('target');
 
 // CHIEDERE ALL'UTENTE IL NUMERO DI KM CHE VUOLE PERCORRERE.
-const userKm = prompt('Quanti km vuoi percorrere?', '10');
-console.log('userKm');
+const userKm = parseInt(prompt('Quanti km vuoi percorrere?', '10').trim());
+console.log('Userkm ' + userKm);
 
 // CHIEDERE ALL'UTENTE LA SUA ETA'.
-const userAge = prompt('Quanti anni hai?', '18');
-console.log('userAge');
+const userAge = parseInt(prompt('Quanti anni hai?', '18').trim());
+console.log('userAge ' + userAge);
+
+// CREO VARIABILE COSTO BILGIETTO AL KM
+const ticketPrizePerKm = 0.21;
+console.log('ticketPrizePerKm €' + ticketPrizePerKm);
+
+
+
+
+
+
+
+
+
+
+
+
+// //STAMPARE SU PAGINA IL COSTO DEL
+// targetElement.innerText = `Il costo del tuo biglietto è di € ${userTicketPrize}`;
+
+
 
