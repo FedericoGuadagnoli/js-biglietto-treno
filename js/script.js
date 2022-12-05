@@ -12,7 +12,7 @@ console.log('JS OK');
 
 //  STEPS
     /*
-    1 - PRENDO L'ELEMENTO DALLA PAGINA.
+    1 - PRENDO GLI ELEMENTI DALLA PAGINA.
     2 - CHIEDERE ALL'UTENTE IL NUMERO DI KM CHE VUOLE PERCORRERE.
     3 - CHIEDERE ALL'UTENTE LA SUA ETA'.
     4 - CREARE UNA VARIABILE CHE INDICHI IL COSTO DEL BIGLIETTO AL KM.
@@ -22,9 +22,18 @@ console.log('JS OK');
     */
 
     
-// PRENDO L'ELEMENTO DALLA PAGINA.
+// PRENDO GLI ELEMENTI DALLA PAGINA.
 const targetElement = document.getElementById('target');
 console.log('target');
+
+const ageElement = document.getElementById('age');
+console.log('age');
+
+const kmElement = document.getElementById('km');
+console.log('km');
+
+const ticketprizeElement = document.getElementById('ticket-prize');
+console.log('ticket-prize');
 
 // CHIEDERE ALL'UTENTE IL NUMERO DI KM CHE VUOLE PERCORRERE.
 const userKm = parseInt(prompt('Quanti km vuoi percorrere?', '10').trim());
@@ -55,7 +64,15 @@ console.log('Il tuo sconto under 18 sarà di €' + userTicketPrizeUnder18);
 const userTicketPrizeOver65 = userTicketPrize - (userTicketPrize * discountOver65 / 100);
 console.log('Il tuo sconto over 65 sarà di €' + userTicketPrizeOver65);
 
-// STABILISCO QUALE SCONTO APPLICARE IN BASE ALL'ETA' DATA DALL'UTENTE
+// STAMPO IN PAGINA L'ETA',I KM DELL'UTENTE E IL PREZZO NON SCONTATO IN CASO LO SCONTO CI SIA
+ageElement.innerText = `La tua età: ${userAge} anni`;
+kmElement.innerText = `Chilometraggio: ${userKm} Km`;
+if (userAge < 18 || userAge > 65) {
+    ticketprizeElement.innerText = 'Il biglietto non scontato costa €' + userTicketPrize.toFixed(2);
+}
+
+
+// STABILISCO QUALE SCONTO APPLICARE IN BASE ALL'ETA' DATA DALL'UTENTE E LO STAMPO IN PAGINA
 if(userAge >= 18 && userAge <= 65) {
     targetElement.innerText = `Il costo del tuo biglietto sarà di € ${userTicketPrize.toFixed(2)}`;
 }   else if (userAge < 18) {
@@ -63,9 +80,6 @@ if(userAge >= 18 && userAge <= 65) {
     } else if (userAge > 65) {
         targetElement.innerText = `Il costo del tuo biglietto over 65 è di € ${userTicketPrizeOver65.toFixed(2)}`;
     }
-
-
-// RIDUCO I PREZZI A DUE CIFRE DECIMALI 
 
 //CONTROLLO SE LA PAROLA INSERITA NON SIA UN NUMERO
 if(isNaN(userKm) || userKm == '' || userKm ===null) {
